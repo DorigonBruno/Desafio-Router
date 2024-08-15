@@ -1,11 +1,11 @@
 import foto from "../../img/contato.jpg";
 import {
   Container,
-  Imagem,
   ListaContato,
   Listatitulo,
   ListaItem,
   ListaLink,
+  Imagem,
 } from "./StyledContato";
 
 const Contato = () => {
