@@ -8,13 +8,23 @@ const Container = styled.div`
   margin: 0 auto;
   justify-content: center;
   flex-wrap: wrap;
-  padding: 10px;
 `;
 
 const ContainerList = styled.ul`
   display: flex;
   flex-direction: column;
   list-style-type: none;
+  margin-top: 10px;
+  animation: ease animaLeft 0.5s;
+
+  @keyframes animaLeft {
+    from {
+      transform: translate(-300px);
+    }
+    to {
+      transform: initial;
+    }
+  }
 `;
 
 const ListItem = styled.li`
@@ -27,6 +37,18 @@ const Img = styled.img`
   object-fit: cover;
   width: 300px;
   border-radius: 10px;
+  transition: ease 0.3s;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+`;
+
+const Titulo = styled.h2`
+  font-size: 1.4rem;
+  text-decoration: none;
+  color: #000;
+  font-family: sans-serif;
 `;
 
 const Home = () => {
@@ -44,9 +66,9 @@ const Home = () => {
       {produto.map((item) => (
         <ContainerList key={item.id}>
           <ListItem>
-            <Link>
+            <Link style={{ textDecoration: "none" }}>
               <Img src={item.fotos[0].src} alt={item.fotos[0].titulo} />
-              <h2>{item.nome}</h2>
+              <Titulo>{item.nome}</Titulo>
             </Link>
           </ListItem>
         </ContainerList>
