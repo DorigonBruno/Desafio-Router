@@ -1,6 +1,5 @@
 import styled from "styled-components";
 
-
 export const Container = styled.div`
   display: flex;
   max-width: 1200px;
@@ -14,7 +13,7 @@ export const ContainerList = styled.ul`
   flex-direction: column;
   list-style-type: none;
   margin-top: 10px;
-  animation: ease animaLeft 0.5s;
+  animation: animaLeft 0.5s forwards;
 
   @keyframes animaLeft {
     from {

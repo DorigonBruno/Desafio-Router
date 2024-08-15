@@ -7,6 +7,16 @@ export const Container = styled.div`
   justify-content: start;
   flex-wrap: wrap;
   padding: 10px;
+  animation: animaLeft 0.5s forwards;
+
+  @keyframes animaLeft {
+    from {
+      transform: translate(-300px);
+    }
+    to {
+      transform: initial;
+    }
+  }
 
   @media (max-width: 780px) {
     flex-direction: column-reverse;
