@@ -14,6 +14,10 @@ export const Nav = styled.nav`
   gap: 10px;
   padding: 10px 0;
   font-size: 1.4rem;
+
+  & a.active button{
+    background: #ddd;
+  }
 `;
 
 export const ButtonHeader = styled.button`

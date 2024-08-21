@@ -1,4 +1,5 @@
 import foto from "../../img/contato.jpg";
+import Head from "../Head/Head";
 import {
   Container,
   ListaContato,
@@ -11,6 +12,7 @@ import {
 const Contato = () => {
   return (
     <Container>
+      <Head title="Ranek | Contato" description="Página de Contato" />
       <Imagem src={foto} />
       <ListaContato>
         <Listatitulo>Entre em Contato</Listatitulo>

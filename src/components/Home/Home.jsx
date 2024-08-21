@@ -1,6 +1,8 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import Head from "../Head/Head";
+
 import { Container, ContainerList, Img, ListItem, Titulo } from "./StyledHome";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   const [produto, setProduto] = React.useState(null);
@@ -14,6 +16,7 @@ const Home = () => {
   if (produto === null) return null;
   return (
     <Container>
+      <Head title="Ranek" description="Página Inicial" />
       {produto.map((item) => (
         <ContainerList key={item.id}>
           <ListItem>
