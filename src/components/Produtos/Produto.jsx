@@ -1,5 +1,14 @@
 import React from "react";
 import { useParams } from "react-router-dom";
+import {
+  Container,
+  ContainerImg,
+  Imagem,
+  ContainerConteudo,
+  ConteudoTitulo,
+  ConteudoButton,
+  ConteudoDescricao,
+} from "./StyledProdutos";
 
 const Produto = () => {
   const [produto, setProduto] = React.useState(null);
@@ -18,13 +27,18 @@ const Produto = () => {
 
   if (produto === null) return null;
   return (
-    <div>
-      {produto.fotos.map((img) => (
-        <img key={img.titulo} src={img.src} />
-      ))}
-      <h2>{produto.nome}</h2>
-      <p>{produto.preco}</p>
-    </div>
+    <Container>
+      <ContainerImg>
+        {produto.fotos.map((img) => (
+          <Imagem key={img.titulo} src={img.src} />
+        ))}
+      </ContainerImg>
+      <ContainerConteudo>
+        <ConteudoTitulo>{produto.nome}</ConteudoTitulo>
+        <ConteudoButton>R$ {produto.preco}</ConteudoButton>
+        <ConteudoDescricao>{produto.descricao}</ConteudoDescricao>
+      </ContainerConteudo>
+    </Container>
   );
 };
 
