@@ -6,7 +6,7 @@ export const Container = styled.div`
   margin: 0 auto;
   flex-wrap: wrap;
   padding: 10px;
-  gap: 120px;
+  gap: 60px;
   animation: animaLeft 0.5s forwards;
 
   @keyframes animaLeft {
@@ -18,7 +18,7 @@ export const Container = styled.div`
     }
   }
 
-  @media (max-width: 780px) {
+  @media (max-width: 950px) {
     flex-direction: column-reverse;
     align-items: center;
     margin: 0 auto;
@@ -37,7 +37,7 @@ export const Imagem = styled.img`
   flex-direction: column;
   max-width: 100%;
   object-fit: cover;
-  width: 300px;
+  width: 400px;
   border-radius: 10px;
 `;
 
