@@ -20,7 +20,7 @@ const Home = () => {
       {produto.map((item) => (
         <ContainerList key={item.id}>
           <ListItem>
-            <Link style={{ textDecoration: "none" }}>
+            <Link to={`produto/${item.id}`} style={{ textDecoration: "none" }}>
               <Img src={item.fotos[0].src} alt={item.fotos[0].titulo} />
               <Titulo>{item.nome}</Titulo>
             </Link>
