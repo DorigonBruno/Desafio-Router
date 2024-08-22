@@ -8,23 +8,37 @@ import {
   ConteudoTitulo,
   ConteudoButton,
   ConteudoDescricao,
+  Loading,
 } from "./StyledProdutos";
 
 const Produto = () => {
   const [produto, setProduto] = React.useState(null);
+  const [loading, setLoading] = React.useState(true);
   const { id } = useParams();
 
   React.useEffect(() => {
     async function getFecth(url) {
-      const response = await fetch(url);
-      const json = await response.json();
-
-      return setProduto(json);
+      setLoading(true);
+      try {
+        const response = await fetch(url);
+        const json = await response.json();
+        setProduto(json);
+      } catch (erro) {
+        console.log(erro);
+      } finally {
+        setLoading(false);
+      }
     }
 
     getFecth(`https://ranekapi.origamid.dev/json/api/produto/${id}`);
   }, [id]);
 
+  if (loading)
+    return (
+      <Container>
+        <Loading></Loading>
+      </Container>
+    );
   if (produto === null) return null;
   return (
     <Container>

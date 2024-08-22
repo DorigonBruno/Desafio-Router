@@ -22,7 +22,7 @@ export const Container = styled.div`
     flex-direction: column-reverse;
     align-items: center;
     margin: 0 auto;
-    gap: 10px;
+    gap: 20px;
   }
 `;
 
@@ -73,4 +73,19 @@ export const ConteudoDescricao = styled.p`
   max-width: 400px;
   margin-bottom: 10px;
   font-weight: 500;
+`;
+
+export const Loading = styled.div`
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 10px solid #ccc;
+  border-right-color: transparent;
+  animation: loadingFrame 1s infinite;
+
+  @keyframes loadingFrame {
+    to {
+      transform: rotate(360deg);
+    }
+  }
 `;
